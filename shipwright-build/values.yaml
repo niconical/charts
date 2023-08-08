@@ -17,3 +17,6 @@ shipwrightBuildController:
     WAITER_CONTAINER_IMAGE:
       repository: ghcr.io/shipwright-io/build/waiter
       tag: v0.10.0
+    BUILDER_CONTAINER_IMAGE:
+      repository: docker.io/paketobuildpacks/builder
+      tag: full 
