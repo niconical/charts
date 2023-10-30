@@ -1,0 +1,15 @@
+apiVersion: shipwright.io/v1alpha1
+kind: Build
+metadata:
+  name: buildpack-node-build
+spec:
+  source:
+    url: https://github.com/paketo-buildpacks/samples
+    contextDir: nodejs/npm
+  strategy:
+    name: buildpacks-v3-node
+    kind: ClusterBuildStrategy
+  output:
+    image: docker.io/cuihang97/sample-node2:latest
+    credentials:
+      name: push-secret

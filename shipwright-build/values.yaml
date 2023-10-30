@@ -19,7 +19,7 @@ shipwrightBuildController:
       tag: v0.10.0
     BUILDER_CONTAINER_IMAGE_GO:
       repository: builder-go
-      tag: binoic 
+      tag: bionic 
     BUILDER_CONTAINER_IMAGE_NODE:
       repository: builder-node
       tag: bionic 

@@ -1,0 +1,7 @@
+apiVersion: shipwright.io/v1alpha1
+kind: BuildRun
+metadata:
+  generateName: buildpack-python-buildrun-
+spec:
+  buildRef:
+    name: buildpack-python-build

@@ -1,0 +1,15 @@
+apiVersion: shipwright.io/v1alpha1
+kind: Build
+metadata:
+  name: buildpack-python-build
+spec:
+  source:
+    url: https://github.com/paketo-buildpacks/python
+    contextDir: python/pip
+  strategy:
+    name: buildpacks-v3-python
+    kind: ClusterBuildStrategy
+  output:
+    image: docker.io/cuihang97/sample-python2:latest
+    credentials:
+      name: push-secret

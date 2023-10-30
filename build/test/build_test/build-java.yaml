@@ -1,0 +1,15 @@
+apiVersion: shipwright.io/v1alpha1
+kind: Build
+metadata:
+  name: buildpack-java-build
+spec:
+  source:
+    url: https://github.com/paketo-buildpacks/samples
+    contextDir: java/maven
+  strategy:
+    name: buildpacks-v3-java
+    kind: ClusterBuildStrategy
+  output:
+    image: docker.io/cuihang97/sample-java2:latest
+    credentials:
+      name: push-secret

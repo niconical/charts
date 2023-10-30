@@ -10,6 +10,9 @@ spec:
     - name: platform-api-version
       description: The referenced version is the minimum version that all relevant buildpack implementations support.
       default: "0.4"
+    - name: bp-go-version
+      description: To configure the Go version, please use the BP_GO_VERSION environment variable at build time
+      default: "1.19.*"
   buildSteps:
     - name: prepare
     {{- with .Values.shipwrightBuildController.shipwrightBuild}}
@@ -49,6 +52,8 @@ spec:
           value: $(params.shp-source-context)
         - name: PARAM_OUTPUT_IMAGE
           value: $(params.shp-output-image)
+        - name: BP_GO_VERSION
+          value: $(params.bp-go-version)
       command:
         - /bin/bash
       args:
